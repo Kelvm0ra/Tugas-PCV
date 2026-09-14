@@ -1,17 +1,16 @@
 import cv2
-from matplotlib import pyplot as plt
 
 # Code read image
 image = cv2.imread( "image2.png")
 [h,w,c] = image.shape
 
-# Filter color image
+# Code Filter color image
 for i in range(h) :
     for j in range(w) :
         image [i, j, 1] = 0
         image [i, j, 0] = 0
 
-# Menampilkan Citra // Show image
+# Code Show image
 scale = 0.5
 cv2.namedWindow("Image setelah di filter", cv2.WINDOW_NORMAL)
 cv2.resizeWindow("Image setelah di filter", int(w * scale), int(h * scale))
@@ -19,7 +18,7 @@ cv2.imshow("Image setelah di filter", image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-# Read Video webcam
+# Code filter color video
 cap = cv2.VideoCapture(0)
 
 scale = 0.5
@@ -39,4 +38,3 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
-
